@@ -223,12 +223,6 @@ std::vector<ACG::Vec3d> points;
     if(lineSoup.size() == 0)return nullptr;
 
 
-    /*
-     * Add the first line in the lineSoup to the outwall polyline. And then set it to invalid.
-     * You can add 3D Points to the outwall by using:
-     * outwall.add_point( Some3DPoint );
-     */
-
     outwall.add_point(lineSoup[0].start);
     outwall.add_point(lineSoup[0].end);
     lineSoup[0].valid = false;
@@ -249,11 +243,6 @@ std::vector<ACG::Vec3d> points;
      * Once you cannot find any other point, exit the loop using the
      * break;
      * statement
-     */
-    //########START##########
-
-
-    //########END###########
     }
     emit updatedObject(targetId,UPDATE_ALL);
     return &outwall;
